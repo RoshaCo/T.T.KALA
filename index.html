@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b0b">
+
+  <title>T.T.KALAA</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="brand">T.T.KALAA</div>
+
+    <div class="live-visitors" id="liveVisitors">
+      همین الان؛ <span id="visitorCount">--</span> نفر در حال بازدید از سایت
+    </div>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+  <main>
+
+    <section class="hero-section">
+
+      <h1>محصولات فرهنگی دیجیتال</h1>
+
+      <p>
+        مجموعه‌ای از محصولات فرهنگی دیجیتال
+      </p>
+
+      <div class="hero-actions">
+        <button type="button" class="primary-btn" id="chooseProductBtn">
+          محصولت را انتخاب کن
+        </button>
+
+        <button type="button" class="secondary-btn" id="heroChanceBtn">
+          شانس من چقدر است؟
+        </button>
+      </div>
+
+    </section>
+
+
+    <!-- ================= COUNTDOWN ================= -->
+    <section class="countdown-section">
+      <div class="section-label">زمان باقی‌مانده تا پایان دوره</div>
+
+      <div class="countdown" id="countdown">
+        <div class="count-box">
+          <strong id="countdownDays">--</strong>
+          <span>روز</span>
+        </div>
+
+        <div class="count-box">
+          <strong id="countdownHours">--</strong>
+          <span>ساعت</span>
+        </div>
+
+        <div class="count-box">
+          <strong id="countdownMinutes">--</strong>
+          <span>دقیقه</span>
+        </div>
+
+        <div class="count-box">
+          <strong id="countdownSeconds">--</strong>
+          <span>ثانیه</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================= MAIN PRIZE ================= -->
+    <section class="main-prize-section">
+
+      <div class="section-title">
+        <span>جایزه اصلی</span>
+      </div>
+
+      <div class="main-prize-card">
+
+        <!-- تصویر پژو 206 -->
+        <img
+          src="pic/car.jpg"
+          alt="پژو 206"
+          class="main-prize-image"
+        >
+
+        <div class="main-prize-content">
+          <h2>پژو 206</h2>
+
+          <div class="prize-ratio">
+            <strong>۱ جایزه به ازای هر ۱۰۰ شرکت‌کننده</strong>
+          </div>
+
+          <div class="campaign-stats">
+
+            <div class="campaign-stat">
+              <span>دوره جاری</span>
+              <strong id="campaignNumber">--</strong>
+            </div>
+
+            <div class="campaign-stat">
+              <span>خرید امروز</span>
+              <strong id="todayPurchases">--</strong>
+            </div>
+
+            <div class="campaign-stat">
+              <span>شرکت‌کنندگان</span>
+              <strong id="totalParticipants">--</strong>
+            </div>
+
+            <div class="campaign-stat">
+              <span>نسبت جایزه</span>
+              <strong>۱ به ۱۰۰</strong>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= OTHER PRIZES ================= -->
+    <section class="prizes-section">
+
+      <div class="section-title">
+        <span>سایر جوایز</span>
+      </div>
+
+      <div class="prizes-grid">
+
+        <!-- گوشی موبایل -->
+        <article class="prize-card">
+          <img src="pic/phone.jpg" alt="گوشی موبایل">
+          <h3>گوشی موبایل</h3>
+        </article>
+
+        <!-- جایزه نقدی 200 میلیون تومان -->
+        <article class="prize-card">
+          <img src="pic/cash.jpg" alt="جایزه نقدی 200 میلیون تومان">
+          <h3>جایزه نقدی ۲۰۰ میلیون تومان</h3>
+        </article>
+
+        <!-- سکه طلا -->
+        <article class="prize-card">
+          <img src="pic/coin.jpg" alt="سکه طلا">
+          <h3>سکه طلا</h3>
+        </article>
+
+        <!-- ست گردنبند و گوشواره طلا -->
+        <article class="prize-card">
+          <img src="pic/jewelry.jpg" alt="ست گردنبند و گوشواره طلا">
+          <h3>ست گردنبند و گوشواره طلا</h3>
+        </article>
+
+        <!-- پلی استیشن 5 -->
+        <article class="prize-card">
+          <img src="pic/ps5.jpg" alt="PlayStation 5">
+          <h3>PlayStation 5</h3>
+        </article>
+
+        <!-- تلویزیون 60 اینچ دوو -->
+        <article class="prize-card">
+          <img src="pic/tv.jpg" alt="تلویزیون 60 اینچ دوو">
+          <h3>تلویزیون ۶۰ اینچ دوو</h3>
+        </article>
+
+        <!-- سایر جوایز -->
+        <article class="prize-card">
+          <img src="pic/other.jpg" alt="سایر جوایز">
+          <h3>سایر جوایز</h3>
+        </article>
+
+        <!-- جایزه ویژه -->
+        <article class="prize-card">
+          <img src="pic/other.jpg" alt="جایزه ویژه">
+          <h3>جایزه ویژه</h3>
+        </article>
+
+      </div>
+
+      <button type="button" class="main-cta" id="prizeBuyBtn">
+        همین حالا خرید کن؛ شاید برنده تو باشی
+      </button>
+
+    </section>
+
+
+    <!-- ================= PRODUCTS ================= -->
+    <section class="products-section" id="products">
+
+      <div class="section-title">
+        <span>محصولت را انتخاب کن</span>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+
+        <!-- محصولات توسط products.js بارگذاری می‌شوند -->
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= CHANCE ================= -->
+    <section class="chance-section" id="chance">
+
+      <div class="chance-hook">
+        <strong>هر ۱۰۰ نفر یک جایزه</strong>
+        <span>استقبال بیشتر، جوایز بیشتر</span>
+      </div>
+
+      <div class="chance-card">
+
+        <h2>شانس من چقدر است؟</h2>
+
+        <p class="chance-description">
+          شماره تماس خود را وارد کنید تا سوابق خرید و ثبتنام شما در قرعه کشی مشخص شود
+        </p>
+
+        <form id="chanceForm">
+
+          <input
+            type="tel"
+            id="chanceMobile"
+            name="mobile"
+            inputmode="numeric"
+            autocomplete="tel"
+            maxlength="11"
+            placeholder="09xxxxxxxxx"
+            aria-label="شماره تماس"
+          >
+
+          <button type="submit" class="chance-submit">
+            بررسی شانس من
+          </button>
+
+        </form>
+
+        <div
+          id="chanceResult"
+          class="chance-result"
+          aria-live="polite"
+        ></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= TRUST / RULES ================= -->
+    <section class="trust-section">
+
+      <div class="trust-items">
+        <div>پرداخت امن زرین‌پال</div>
+        <div>ثبت خرید پس از تأیید پرداخت</div>
+        <div>هر خرید = ۱ شانس</div>
+      </div>
+
+      <div class="rules">
+        <span>دوره جاری</span>
+        <span>•</span>
+        <span>هر خرید ۱ شانس</span>
+        <span>•</span>
+        <span>نسبت جایزه ۱ به ۱۰۰</span>
+        <span>•</span>
+        <span>قیمت هر محصول ۲۹٬۰۰۰ تومان</span>
+      </div>
+
+    </section>
+
+
+    <!-- ================= FINAL CTA ================= -->
+    <section class="final-cta-section">
+
+      <button type="button" class="main-cta" id="finalBuyBtn">
+        همین حالا خرید کن؛ شاید برنده تو باشی
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= PRODUCT MODAL ================= -->
+  <div class="modal" id="productModal" aria-hidden="true">
+
+    <div class="modal-overlay" data-close-modal></div>
+
+    <div class="modal-content">
+
+      <button
+        type="button"
+        class="modal-close"
+        data-close-modal
+        aria-label="بستن"
+      >
+        ×
+      </button>
+
+      <h2>انتخاب محصول</h2>
+
+      <div id="selectedProduct"></div>
+
+      <button
+        type="button"
+        class="modal-primary-btn"
+        id="continuePaymentBtn"
+      >
+        ادامه و پرداخت
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= PAYMENT MODAL ================= -->
+  <div class="modal" id="paymentModal" aria-hidden="true">
+
+    <div class="modal-overlay" data-close-modal></div>
+
+    <div class="modal-content">
+
+      <button
+        type="button"
+        class="modal-close"
+        data-close-modal
+        aria-label="بستن"
+      >
+        ×
+      </button>
+
+      <h2>پرداخت</h2>
+
+      <div id="paymentProduct"></div>
+
+      <button
+        type="button"
+        class="modal-primary-btn"
+        id="payBtn"
+      >
+        پرداخت امن زرین‌پال
+      </button>
+
+      <div
+        id="paymentStatus"
+        class="payment-status"
+        aria-live="polite"
+      ></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= MOBILE REGISTER MODAL ================= -->
+  <div class="modal" id="mobileModal" aria-hidden="true">
+
+    <div class="modal-overlay"></div>
+
+    <div class="modal-content">
+
+      <h2>ثبت خرید</h2>
+
+      <p>
+        شماره تماس خود را وارد کنید تا خرید و شانس قرعه‌کشی برای شما ثبت شود.
+      </p>
+
+      <form id="mobileRegisterForm">
+
+        <input
+          type="tel"
+          id="purchaseMobile"
+          name="mobile"
+          inputmode="numeric"
+          autocomplete="tel"
+          maxlength="11"
+          placeholder="09xxxxxxxxx"
+          aria-label="شماره تماس"
+        >
+
+        <button type="submit" class="modal-primary-btn">
+          ثبت خرید
+        </button>
+
+      </form>
+
+      <div
+        id="mobileRegisterStatus"
+        class="payment-status"
+        aria-live="polite"
+      ></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= RESULT MODAL ================= -->
+  <div class="modal" id="resultModal" aria-hidden="true">
+
+    <div class="modal-overlay" data-close-modal></div>
+
+    <div class="modal-content result-modal-content">
+
+      <button
+        type="button"
+        class="modal-close"
+        data-close-modal
+        aria-label="بستن"
+      >
+        ×
+      </button>
+
+      <div id="purchaseResult"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= SCRIPTS ================= -->
+
+  <script src="api.js"></script>
+  <script src="products.js"></script>
+  <script src="countdown.js"></script>
+  <script src="chance.js"></script>
+  <script src="payment.js"></script>
+  <script src="main.js"></script>
+
+</body>
+      </html>
