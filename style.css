@@ -1,0 +1,533 @@
+/* ═══════════════════════════════════════════
+   🎨 استایل کلی سایت
+   ═══════════════════════════════════════════ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #F8F9FA;
+    --text: #2D3436;
+    --text-light: #636E72;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+    --radius: 12px;
+}
+
+body {
+    font-family: 'Vazirmatn', 'IRANSans', Tahoma, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ═══════════════════════════════════════════
+   🎯 هدر اصلی
+   ═══════════════════════════════════════════ */
+
+.header {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 0 0 25px 25px;
+}
+
+.header h1 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 15px;
+    opacity: 0.95;
+}
+
+/* ═══════════════════════════════════════════
+   🏆 بخش جوایز
+   ═══════════════════════════════════════════ */
+
+.prizes-section {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.prizes-section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.prizes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.prize-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: var(--shadow);
+    font-size: 15px;
+    font-weight: bold;
+    animation: float 3s infinite;
+}
+
+.prize-card:nth-child(2) { animation-delay: 0.2s; }
+.prize-card:nth-child(3) { animation-delay: 0.4s; }
+.prize-card:nth-child(4) { animation-delay: 0.6s; }
+.prize-card:nth-child(5) { animation-delay: 0.8s; }
+
+/* ═══════════════════════════════════════════
+   ⏰ بخش تایمر
+   ═══════════════════════════════════════════ */
+
+.countdown-section {
+    padding: 20px;
+    text-align: center;
+    background: white;
+    margin: 10px 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.countdown-section p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.countdown-item {
+    background: #F0EDFF;
+    border-radius: 8px;
+    padding: 10px;
+    min-width: 55px;
+}
+
+.countdown-item span {
+    font-size: 22px;
+    font-weight: bold;
+    color: #6C5CE7;
+    display: block;
+}
+
+.countdown-item small {
+    font-size: 11px;
+    color: var(--text-light);
+}
+
+.countdown-separator {
+    font-size: 22px;
+    color: #6C5CE7;
+}
+
+/* ═══════════════════════════════════════════
+   📊 کارت‌های شیشه‌ای زنده (Live Stats)
+   ═══════════════════════════════════════════ */
+
+.live-stats-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.glass-card {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s;
+    min-height: 55px;
+    width: 100%;
+}
+
+.glass-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.glass-card span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.glass-card small {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-right: auto;
+}
+
+.glass-icon {
+    font-size: 24px !important;
+}
+
+/* رنگ‌های شاد برای هر کارت */
+.glass-green {
+    background: rgba(0, 184, 148, 0.8);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.glass-orange {
+    background: rgba(253, 121, 65, 0.8);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.glass-purple {
+    background: rgba(108, 92, 231, 0.8);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.glass-pink {
+    background: rgba(232, 67, 147, 0.8);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.glass-blue {
+    background: rgba(9, 132, 227, 0.8);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.glass-red {
+    background: rgba(214, 48, 49, 0.8);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ═══════════════════════════════════════════
+   🔍 بخش چک شانس
+   ═══════════════════════════════════════════ */
+
+.luck-check-section {
+    padding: 30px 20px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.luck-check-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input[type="tel"] {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #E0E0E0;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+input[type="tel"]:focus {
+    outline: none;
+    border-color: #6C5CE7;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+}
+
+.btn-luck {
+    padding: 12px 20px;
+    background: #6C5CE7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-luck:hover {
+    background: #5A4BD1;
+    transform: translateY(-2px);
+}
+
+.luck-result {
+    background: #F0EDFF;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 15px;
+    font-size: 15px;
+    animation: fadeIn 0.5s;
+}
+
+/* ═══════════════════════════════════════════
+   🛒 بخش محصولات
+   ═══════════════════════════════════════════ */
+
+.products-section {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.products-section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
+    }
+}
+
+.product-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 25px 15px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.product-image {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.product-card p {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 12px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #6C5CE7;
+    margin-bottom: 15px;
+}
+
+.btn-buy {
+    width: 100%;
+    padding: 12px;
+    background: #00B894;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+.btn-buy:hover {
+    background: #00A381;
+    transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════
+   ⭐ بخش نظرات
+   ═══════════════════════════════════════════ */
+
+.reviews-section {
+    padding: 30px 20px;
+    background: white;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.reviews-section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.review-card {
+    background: #F8F9FA;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 400px;
+    font-size: 14px;
+}
+
+/* ═══════════════════════════════════════════
+   📜 فوتر
+   ═══════════════════════════════════════════ */
+
+.footer {
+    background: #2D3436;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer p {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.rules-link {
+    color: #A29BFE;
+    text-decoration: none;
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+/* ═══════════════════════════════════════════
+   📜 مودال قوانین
+   ═══════════════════════════════════════════ */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-content h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #6C5CE7;
+}
+
+.rules-text {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.rules-text h4 {
+    margin: 15px 0 8px;
+    color: #6C5CE7;
+    font-size: 14px;
+}
+
+.rules-text p {
+    font-size: 13px;
+    color: var(--text-light);
+    margin: 5px 0;
+}
+
+.btn-close {
+    width: 100%;
+    padding: 12px;
+    background: #6C5CE7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+/* ═══════════════════════════════════════════
+   🎬 انیمیشن‌ها
+   ═══════════════════════════════════════════ */
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════
+   📱 موبایل فرست
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 22px;
+    }
+    
+    .glass-card {
+        padding: 10px 14px;
+        min-height: 50px;
+    }
+    
+    .glass-card span {
+        font-size: 16px;
+    }
+    
+    .glass-icon {
+        font-size: 20px !important;
+    }
+    
+    .countdown-item {
+        min-width: 45px;
+        padding: 8px;
+    }
+    
+    .countdown-item span {
+        font-size: 18px;
+    }
+  }
