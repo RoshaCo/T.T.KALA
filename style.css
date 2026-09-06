@@ -1,0 +1,430 @@
+/* ===== استایل کلی ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #6C5CE7;
+    --primary-dark: #5A4BD1;
+    --success: #00B894;
+    --warning: #FDCB6E;
+    --danger: #E17055;
+    --bg: #F8F9FA;
+    --card: #FFFFFF;
+    --text: #2D3436;
+    --text-light: #636E72;
+    --border: #E0E0E0;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+    --shadow-hover: 0 5px 20px rgba(0,0,0,0.15);
+    --radius: 12px;
+}
+
+body {
+    font-family: 'Vazirmatn', 'IRANSans', Tahoma, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ===== هدر ===== */
+.header {
+    background: linear-gradient(135deg, #6C5CE7 0%, #A29BFE 100%);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 0 0 30px 30px;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* ===== بخش چک شانس ===== */
+.luck-section {
+    padding: 20px;
+    margin-top: -20px;
+}
+
+.card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 30px 20px;
+    box-shadow: var(--shadow);
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="tel"] {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+input[type="tel"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+}
+
+.btn-luck {
+    padding: 12px 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: inherit;
+    white-space: nowrap;
+    transition: all 0.3s;
+}
+
+.btn-luck:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* نتیجه شانس */
+.luck-result {
+    margin-top: 20px;
+    padding: 20px;
+    background: #F0EDFF;
+    border-radius: 8px;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.luck-percentage {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.luck-percentage span {
+    font-size: 36px;
+}
+
+.luck-message {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #E0E0E0;
+    border-radius: 5px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6C5CE7, #00B894);
+    border-radius: 5px;
+    transition: width 1s ease;
+    width: 0%;
+}
+
+/* ===== بخش محصولات ===== */
+.products-section {
+    padding: 40px 20px;
+}
+
+.products-section h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.section-desc {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
+    }
+}
+
+.product-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 30px 20px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+}
+
+.product-image {
+    font-size: 64px;
+    margin-bottom: 20px;
+    animation: float 3s infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product-desc {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    min-height: 40px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.product-meta {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+.btn-buy {
+    width: 100%;
+    padding: 15px;
+    background: var(--success);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+.btn-buy:hover {
+    background: #00A381;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);
+}
+
+.btn-buy:active {
+    transform: translateY(0);
+}
+
+/* ===== بخش نظرات ===== */
+.reviews-section {
+    padding: 40px 20px;
+    background: white;
+}
+
+.reviews-section h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .reviews-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
+    }
+}
+
+.review-card {
+    background: var(--bg);
+    border-radius: var(--radius);
+    padding: 20px;
+    text-align: center;
+}
+
+.review-card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: var(--text);
+}
+
+.review-card span {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+/* ===== بخش قوانین ===== */
+.rules-section {
+    padding: 40px 20px;
+}
+
+.rules-section h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.rules-content {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.rules-content h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: var(--primary);
+}
+
+.rules-content h3:first-child {
+    margin-top: 0;
+}
+
+.rules-content ul {
+    list-style: none;
+    padding-right: 0;
+}
+
+.rules-content li {
+    padding: 8px 0;
+    font-size: 14px;
+    color: var(--text-light);
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.rules-content li:last-child {
+    border-bottom: none;
+}
+
+.rules-content li::before {
+    content: "•";
+    color: var(--primary);
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+/* ===== فوتر ===== */
+.footer {
+    background: #2D3436;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer p {
+    font-size: 12px;
+    opacity: 0.8;
+    margin: 5px 0;
+}
+
+/* ===== انیمیشن‌ها ===== */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn-buy:focus {
+    animation: pulse 0.5s;
+}
+
+/* ===== موبایل فرست ===== */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 20px;
+    }
+    
+    .card {
+        padding: 20px 15px;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .btn-luck {
+        width: 100%;
+    }
+    
+    .product-image {
+        font-size: 48px;
+    }
+    
+    .products-grid {
+        gap: 15px;
+    }
+}
