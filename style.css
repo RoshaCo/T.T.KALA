@@ -1,0 +1,683 @@
+/* =========================
+   T.T.KALAA — GLOBAL
+========================= */
+
+:root {
+  --bg: #080808;
+  --bg-soft: #11100e;
+  --card: #151311;
+  --card-2: #1b1814;
+  --gold: #d6ae55;
+  --gold-light: #f1d58a;
+  --text: #f7f2e8;
+  --muted: #b8b0a2;
+  --border: rgba(214, 174, 85, 0.22);
+  --success: #76c893;
+  --danger: #df7777;
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(214, 174, 85, 0.07), transparent 30%),
+    var(--bg);
+  color: var(--text);
+  font-family: Vazirmatn, Tahoma, Arial, sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+main {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 14px 28px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 16px 14px 8px;
+  text-align: center;
+}
+
+.brand {
+  color: var(--gold-light);
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.live-visitors {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.live-visitors span {
+  color: var(--gold-light);
+  font-weight: 900;
+  font-size: 14px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero-section {
+  padding: 22px 4px 18px;
+  text-align: center;
+}
+
+.hero-section h1 {
+  color: var(--text);
+  font-size: clamp(27px, 8vw, 38px);
+  font-weight: 950;
+  line-height: 1.35;
+}
+
+.hero-section p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.primary-btn,
+.secondary-btn,
+.main-cta,
+.chance-submit,
+.modal-primary-btn {
+  width: 100%;
+  min-height: 50px;
+  border: 0;
+  border-radius: 14px;
+  font-weight: 900;
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.primary-btn,
+.main-cta,
+.chance-submit,
+.modal-primary-btn {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: #17120a;
+  box-shadow: 0 8px 25px rgba(214, 174, 85, 0.14);
+}
+
+.secondary-btn {
+  background: transparent;
+  color: var(--gold-light);
+  border: 1px solid var(--border);
+}
+
+.primary-btn:active,
+.secondary-btn:active,
+.main-cta:active,
+.chance-submit:active,
+.modal-primary-btn:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   SECTION TITLES
+========================= */
+
+.section-title {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.section-title span {
+  color: var(--gold-light);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section {
+  padding: 4px 0 16px;
+  text-align: center;
+}
+
+.section-label {
+  margin-bottom: 9px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+}
+
+.count-box {
+  padding: 9px 4px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+}
+
+.count-box strong {
+  display: block;
+  color: var(--gold-light);
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.count-box span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* =========================
+   MAIN PRIZE
+========================= */
+
+.main-prize-section {
+  padding-top: 8px;
+}
+
+.main-prize-card {
+  overflow: hidden;
+  background: linear-gradient(
+    145deg,
+    rgba(214, 174, 85, 0.12),
+    rgba(21, 19, 17, 0.96)
+  );
+  border: 1px solid rgba(214, 174, 85, 0.32);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
+}
+
+.main-prize-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.main-prize-content {
+  padding: 14px;
+  text-align: center;
+}
+
+.main-prize-content h2 {
+  color: var(--gold-light);
+  font-size: 25px;
+  font-weight: 950;
+}
+
+.prize-ratio {
+  margin-top: 5px;
+}
+
+.prize-ratio strong {
+  display: block;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 950;
+}
+
+.campaign-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7px;
+  margin-top: 13px;
+}
+
+.campaign-stat {
+  min-height: 62px;
+  padding: 7px 5px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(214, 174, 85, 0.13);
+  border-radius: 11px;
+}
+
+.campaign-stat span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.campaign-stat strong {
+  display: block;
+  margin-top: 1px;
+  color: var(--gold-light);
+  font-size: 17px;
+  font-weight: 950;
+}
+
+/* =========================
+   OTHER PRIZES
+========================= */
+
+.prizes-section {
+  padding-top: 23px;
+}
+
+.prizes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+}
+
+.prize-card {
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.prize-card img {
+  width: 100%;
+  aspect-ratio: 1 / 0.82;
+  object-fit: cover;
+}
+
+.prize-card h3 {
+  min-height: 43px;
+  padding: 7px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.prizes-section .main-cta {
+  margin-top: 13px;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products-section {
+  padding-top: 27px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.product-card {
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.product-card-content {
+  padding: 9px;
+}
+
+.product-card h3 {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.product-card .select-product-btn {
+  width: 100%;
+  min-height: 42px;
+  margin-top: 8px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: transparent;
+  color: var(--gold-light);
+  font-weight: 900;
+}
+
+/* =========================
+   CHANCE
+========================= */
+
+.chance-section {
+  padding-top: 28px;
+}
+
+.chance-hook {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.chance-hook strong {
+  display: block;
+  color: var(--gold-light);
+  font-size: 21px;
+  font-weight: 950;
+}
+
+.chance-hook span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.chance-card {
+  padding: 17px 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.chance-card h2 {
+  color: var(--gold-light);
+  font-size: 22px;
+  font-weight: 950;
+}
+
+.chance-description {
+  margin: 8px 0 13px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+#chanceForm,
+#mobileRegisterForm {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+#chanceMobile,
+#purchaseMobile {
+  width: 100%;
+  min-height: 49px;
+  padding: 0 13px;
+  border: 1px solid rgba(214, 174, 85, 0.28);
+  border-radius: 12px;
+  outline: none;
+  background: #0d0c0b;
+  color: var(--text);
+  text-align: center;
+  direction: ltr;
+}
+
+#chanceMobile::placeholder,
+#purchaseMobile::placeholder {
+  color: #756f66;
+}
+
+#chanceMobile:focus,
+#purchaseMobile:focus {
+  border-color: var(--gold);
+}
+
+.chance-submit {
+  min-height: 48px;
+}
+
+.chance-result {
+  display: none;
+  margin-top: 12px;
+  padding: 11px;
+  border-radius: 11px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(214, 174, 85, 0.15);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.chance-result.is-visible {
+  display: block;
+}
+
+.chance-result.success {
+  border-color: rgba(118, 200, 147, 0.3);
+  color: var(--success);
+}
+
+.chance-result.error {
+  border-color: rgba(223, 119, 119, 0.3);
+  color: var(--danger);
+}
+
+/* =========================
+   TRUST / RULES
+========================= */
+
+.trust-section {
+  padding: 22px 2px 0;
+  text-align: center;
+}
+
+.trust-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.rules {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 7px;
+  margin-top: 10px;
+  color: #aaa294;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.rules span:nth-child(even) {
+  color: var(--gold);
+}
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.final-cta-section {
+  padding-top: 18px;
+}
+
+/* =========================
+   MODALS
+========================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 520px);
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 22px 16px;
+  background: #141210;
+  border: 1px solid var(--border);
+  border-bottom: 0;
+  border-radius: 22px 22px 0 0;
+  box-shadow: 0 -15px 45px rgba(0, 0, 0, 0.45);
+}
+
+.modal-content h2 {
+  margin-bottom: 13px;
+  color: var(--gold-light);
+  font-size: 21px;
+  text-align: center;
+}
+
+.modal-close {
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 25px;
+  line-height: 1;
+}
+
+.modal-primary-btn {
+  margin-top: 14px;
+}
+
+.payment-status {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.result-modal-content {
+  text-align: center;
+}
+
+/* =========================
+   SELECTED PRODUCT
+========================= */
+
+.selected-product,
+.payment-product {
+  padding: 11px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(214, 174, 85, 0.14);
+  border-radius: 13px;
+  text-align: center;
+}
+
+.selected-product img,
+.payment-product img {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 9px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.selected-product h3,
+.payment-product h3 {
+  color: var(--text);
+  font-size: 16px;
+}
+
+.selected-product .price,
+.payment-product .price {
+  margin-top: 3px;
+  color: var(--gold-light);
+  font-size: 15px;
+  font-weight: 900;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (min-width: 520px) {
+  main,
+  .site-header {
+    max-width: 540px;
+  }
+
+  main {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-section h1 {
+    font-size: 25px;
+  }
+
+  .live-visitors {
+    font-size: 11px;
+  }
+
+  .live-visitors span {
+    font-size: 12px;
+  }
+
+  .prize-ratio strong {
+    font-size: 16px;
+  }
+
+  .campaign-stat strong {
+    font-size: 15px;
+  }
+  }
