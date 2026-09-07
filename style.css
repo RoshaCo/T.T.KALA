@@ -1,0 +1,2083 @@
+/* =========================================================
+   استایل اصلی T.T.KALAA
+   طراحی: موبایل‌محور / فارسی / RTL / تم دودی و طلایی
+   به‌روزرسانی: اعمال تغییرات سفارشی
+   ارتفاع عکس محصولات: نصف شده
+========================================================= */
+
+:root {
+  --bg: #09090b;
+  --bg-soft: #111114;
+  --surface: #151519;
+  --surface-2: #1b1b20;
+  --surface-3: #222228;
+
+  --gold: #d8b56a;
+  --gold-light: #f0d28a;
+  --gold-dark: #9f7b36;
+
+  --text: #f5f3ed;
+  --text-soft: #c9c6bd;
+  --text-muted: #929099;
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-gold: rgba(216, 181, 106, 0.28);
+
+  --success: #63c98b;
+  --danger: #e87575;
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+
+  --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+
+  --container: 1120px;
+}
+
+
+/* =========================================================
+   تنظیمات پایه
+========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  min-width: 320px;
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(216, 181, 106, 0.09),
+      transparent 35%
+    ),
+    var(--bg);
+
+  color: var(--text);
+  font-family: "Vazirmatn", Tahoma, Arial, sans-serif;
+
+  font-size: 16px;
+  line-height: 1.8;
+
+  overflow-x: hidden;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--gold);
+  color: #111;
+}
+
+
+/* =========================================================
+   ابزار عمومی
+========================================================= */
+
+.container {
+  width: min(calc(100% - 32px), var(--container));
+  margin-inline: auto;
+}
+
+section {
+  position: relative;
+  padding: 56px 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+
+  margin-bottom: 10px;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 30px;
+}
+
+.section-heading.compact {
+  margin-bottom: 18px;
+}
+
+.section-heading h2 {
+  color: var(--text);
+  font-size: clamp(27px, 5vw, 42px);
+  font-weight: 900;
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+.section-heading p {
+  color: var(--text-soft);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   دکمه‌ها
+========================================================= */
+
+.btn {
+  min-height: 50px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+  padding: 11px 20px;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  border: 1px solid transparent;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--gold-light),
+    var(--gold)
+  );
+
+  color: #17130b;
+
+  box-shadow:
+    0 10px 30px rgba(216, 181, 106, 0.18);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 36px rgba(216, 181, 106, 0.25);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  border-color: var(--border-gold);
+  background: rgba(216, 181, 106, 0.06);
+}
+
+
+/* =========================================================
+   هدر
+========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(9, 9, 11, 0.84);
+  border-bottom: 1px solid transparent;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.site-header.scrolled {
+  border-bottom-color: var(--border);
+}
+
+.header-inner {
+  min-height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  flex-shrink: 0;
+}
+
+.brand-main {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.brand-sub {
+  color: var(--gold);
+  font-size: 9px;
+  margin-top: 2px;
+  letter-spacing: 0.15em;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.desktop-nav a {
+  color: var(--text-soft);
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: color 0.2s ease;
+}
+
+.desktop-nav a:hover {
+  color: var(--gold);
+}
+
+/* آیکون اینستاگرام با رنگ‌بندی اصلی اینستاگرام */
+.header-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  flex-shrink: 0;
+}
+
+.instagram-icon {
+  position: relative;
+
+  display: inline-block;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 9px;
+
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      rgba(255, 255, 255, 0.25),
+      transparent 40%
+    ),
+    linear-gradient(
+      45deg,
+      #f09433,
+      #e6683c,
+      #dc2743,
+      #cc2366,
+      #bc1888
+    );
+
+  box-shadow:
+    0 0 15px rgba(220, 39, 67, 0.35),
+    0 4px 18px rgba(0, 0, 0, 0.5);
+
+  animation: instagramFloat 3s ease-in-out infinite;
+}
+
+.instagram-icon::after {
+  content: "";
+
+  position: absolute;
+  inset: 6px;
+
+  border: 1.8px solid #ffffff;
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.35);
+}
+
+.instagram-icon::before {
+  content: "";
+
+  position: absolute;
+  top: 7px;
+  right: 7px;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.instagram-id {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+@keyframes instagramFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-4px) rotate(4deg);
+  }
+}
+
+
+/* =========================================================
+   معرفی اصلی
+========================================================= */
+
+.hero {
+  padding-top: 38px;
+  padding-bottom: 48px;
+
+  min-height: 560px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(216, 181, 106, 0.12),
+      transparent 36%
+    );
+}
+
+.hero-content {
+  max-width: 760px;
+  margin: 36px auto 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 8.4vw, 70px);
+  line-height: 1.25;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+
+  margin-bottom: 14px;
+}
+
+.hero h1 strong {
+  display: block;
+  color: var(--gold-light);
+}
+
+.hero-text {
+  max-width: 660px;
+  margin: 0 auto 18px;
+
+  color: var(--text-soft);
+
+  font-size: clamp(16px, 2.9vw, 20px);
+  line-height: 2;
+}
+
+.hero-text .highlight-gold {
+  color: var(--gold-light);
+  font-weight: 800;
+}
+
+/* شمارش معکوس فصلی */
+
+.season-countdown {
+  max-width: 460px;
+  margin: 0 auto 20px;
+
+  padding: 14px 16px;
+
+  border: 1px solid var(--border-gold);
+  border-radius: 16px;
+
+  background: rgba(216, 181, 106, 0.05);
+}
+
+.countdown-label {
+  text-align: center;
+
+  color: var(--gold-light);
+  font-size: 13px;
+  font-weight: 700;
+
+  margin-bottom: 8px;
+}
+
+.countdown-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  direction: ltr;
+}
+
+.countdown-item {
+  min-width: 55px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 6px 10px;
+
+  border-radius: 10px;
+
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.countdown-item strong {
+  color: var(--gold-light);
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.countdown-item strong.countdown-days {
+  color: var(--gold);
+  text-shadow:
+    0 0 12px rgba(216, 181, 106, 0.55);
+  font-size: 25px;
+}
+
+.countdown-item small {
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+.countdown-sep {
+  color: var(--gold);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.hero-price {
+  width: fit-content;
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  color: var(--gold-light);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  flex-wrap: wrap;
+}
+
+.hero-actions .btn {
+  min-width: 200px;
+}
+
+.hero-btn-primary {
+  font-size: 16.5px;
+}
+
+.hero-btn-secondary {
+  font-size: 16.5px;
+}
+
+
+/* =========================================================
+   وضعیت لحظه‌ای و اطلاعات دوره
+========================================================= */
+
+.live-status-section {
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.live-status-card {
+  padding: 16px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  box-shadow: var(--shadow);
+}
+
+.live-status-grid {
+  display: grid;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.live-status-grid.live-status-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.status-row {
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 10px;
+
+  padding: 6px 12px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.status-row:last-child {
+  border-bottom: 0;
+}
+
+.status-row .status-text {
+  color: var(--text);
+  font-size: 15.3px;
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+.status-row .status-text-live {
+  font-size: 15.3px;
+}
+
+/* نقطه‌های نورانی */
+
+.status-dot {
+  position: relative;
+
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 4px rgba(255, 255, 255, 0.04);
+
+  animation: dotPulse 2.6s ease-in-out infinite;
+}
+
+.status-dot::before,
+.status-dot::after {
+  content: "";
+
+  position: absolute;
+  inset: -5px;
+
+  border-radius: 50%;
+
+  border: 1px solid currentColor;
+
+  animation: dotWave 2.6s ease-out infinite;
+}
+
+.status-dot::after {
+  animation-delay: 0.8s;
+}
+
+@keyframes dotPulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes dotWave {
+  0% {
+    transform: scale(0.55);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+.status-dot-live {
+  color: #1f8f4d;
+  background: #1f8f4d;
+}
+
+.status-dot-orange {
+  color: #c85a19;
+  background: #c85a19;
+}
+
+.status-dot-yellow {
+  color: #f2c744;
+  background: #f2c744;
+}
+
+.status-dot-blue {
+  color: #5aa9e6;
+  background: #5aa9e6;
+}
+
+.status-dot-red {
+  color: #b33b3b;
+  background: #b33b3b;
+}
+
+.status-dot-gold {
+  color: #b8902f;
+  background: #b8902f;
+}
+
+/* فرصت طلایی در فضای مشکی مطلق */
+.status-golden-opportunity {
+  margin-top: 10px;
+
+  padding: 10px 12px;
+
+  border: 1px solid var(--border-gold);
+  border-radius: 10px;
+
+  background: #000000;
+
+  text-align: center;
+}
+
+.status-golden-opportunity .status-text-cta {
+  color: var(--gold-light);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   جوایز
+========================================================= */
+
+.prizes-section {
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(255, 255, 255, 0.015),
+      transparent
+    );
+}
+
+.main-prize-card {
+  max-width: 760px;
+  margin: 0 auto 22px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+
+  background: var(--surface);
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.42);
+}
+
+.main-prize-image {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.main-prize-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-prize-content {
+  padding: 16px;
+  text-align: center;
+}
+
+.prize-tag {
+  display: inline-flex;
+
+  padding: 4px 11px;
+  margin-bottom: 6px;
+
+  border-radius: 999px;
+
+  background: rgba(216, 181, 106, 0.1);
+  color: var(--gold);
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.main-prize-content h3 {
+  color: var(--text);
+  font-size: 27px;
+  font-weight: 900;
+}
+
+.main-prize-content p {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+
+/* سایر جوایز */
+
+.other-prizes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 11px;
+}
+
+.prize-card {
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background: var(--surface);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.prize-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-gold);
+}
+
+.prize-image {
+  aspect-ratio: 1 / 0.82;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.prize-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prize-card-content {
+  padding: 8px 6px;
+  text-align: center;
+}
+
+.prize-card-content h3 {
+  color: var(--text-soft);
+  font-size: 13.13px;
+  font-weight: 800;
+}
+
+.prizes-cta {
+  margin-top: 22px;
+  text-align: center;
+}
+
+.prizes-cta p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.prizes-cta .btn {
+  min-width: 260px;
+}
+
+
+/* =========================================================
+   محصولات (تک‌ستونه)
+   ارتفاع عکس محصولات: نصف شده
+========================================================= */
+
+.products-section {
+  padding-top: 65px;
+}
+
+.products-grid-single {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.product-card-single {
+  width: 100%;
+}
+
+.product-cover {
+  aspect-ratio: 1 / 0.41;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.product-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info-single {
+  padding: 8px;
+}
+
+.product-buy-single {
+  width: 100%;
+  min-height: 48px;
+
+  padding: 10px 14px;
+
+  border: 0;
+  border-radius: 12px;
+
+  background: var(--gold);
+  color: #16120a;
+
+  font-size: 13px;
+  font-weight: 900;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.product-buy-single:hover {
+  background: var(--gold-light);
+}
+
+.product-buy-single:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================================================
+   دکمه بلیت ورود بین شانس و وضعیت لحظه‌ای
+========================================================= */
+
+.ticket-cta-section {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.ticket-cta-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.ticket-cta-btn {
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* =========================================================
+   نظرات متحرک خریداران
+========================================================= */
+
+.testimonials-section {
+  padding-top: 40px;
+  padding-bottom: 15px;
+}
+
+.testimonial-box {
+  max-width: 560px;
+  margin: 0 auto;
+
+  padding: 14px 16px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background: var(--surface);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-header {
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.testimonial-title {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.testimonial-content {
+  position: relative;
+  min-height: 62px;
+}
+
+.testimonial-slide {
+  display: none;
+
+  text-align: center;
+
+  padding: 2px 0;
+}
+
+.testimonial-slide.is-active {
+  display: block;
+
+  animation: testimonialFadeIn 0.4s ease;
+}
+
+@keyframes testimonialFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial-name {
+  display: block;
+
+  color: var(--gold-light);
+  font-size: 13px;
+  font-weight: 800;
+
+  margin-bottom: 2px;
+}
+
+.testimonial-text {
+  color: var(--text-soft);
+  font-size: 13px;
+  line-height: 1.8;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   سابقه خرید و شرایط من
+========================================================= */
+
+.chance-section {
+  padding-top: 60px;
+}
+
+.chance-card {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  padding: 28px;
+
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+
+  background:
+    radial-gradient(
+      circle at 50% 0,
+      rgba(216, 181, 106, 0.07),
+      transparent 45%
+    ),
+    var(--surface);
+
+  box-shadow: var(--shadow);
+}
+
+.chance-form {
+  margin-top: 18px;
+}
+
+.chance-form input,
+.post-purchase-form input {
+  width: 100%;
+
+  min-height: 56px;
+
+  padding: 10px 14px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  outline: none;
+
+  background: #0d0d10;
+  color: var(--text);
+
+  font-size: 18px;
+  font-weight: 700;
+
+  direction: ltr;
+  text-align: center;
+
+  letter-spacing: 0.04em;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.chance-form input::placeholder,
+.post-purchase-form input::placeholder {
+  color: #67656b;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.chance-form input:focus,
+.post-purchase-form input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(216, 181, 106, 0.08);
+}
+
+.chance-submit {
+  width: 100%;
+  margin-top: 14px;
+}
+
+.chance-result {
+  margin-top: 16px;
+
+  padding: 16px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.chance-result.success {
+  border-color: rgba(99, 201, 139, 0.3);
+}
+
+.chance-result.empty {
+  border-color: rgba(216, 181, 106, 0.22);
+}
+
+.chance-result h3 {
+  color: var(--text);
+
+  font-size: 18px;
+  font-weight: 900;
+
+  margin-bottom: 6px;
+}
+
+.chance-result p {
+  color: var(--text-soft);
+
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.chance-result .result-value {
+  color: var(--gold-light);
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.chance-result .result-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 8px 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.chance-result .result-row:last-child {
+  border-bottom: 0;
+}
+
+.chance-result .result-label {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.chance-result .result-data {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   اعتماد
+========================================================= */
+
+.trust-section {
+  padding-top: 15px;
+  padding-bottom: 35px;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  overflow: hidden;
+}
+
+.trust-item {
+  min-height: 78px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px;
+
+  text-align: center;
+
+  border-left: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.trust-item:last-child {
+  border-left: 0;
+}
+
+.trust-item > span {
+  font-size: 22px;
+  margin-bottom: 1px;
+}
+
+.trust-item strong {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.trust-item small {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+
+/* =========================================================
+   CTA نهایی
+========================================================= */
+
+.final-cta {
+  padding-top: 15px;
+  padding-bottom: 65px;
+}
+
+.final-cta-card {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  padding: 40px 26px;
+
+  text-align: center;
+
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+
+  background:
+    radial-gradient(
+      circle at 50% 0,
+      rgba(216, 181, 106, 0.1),
+      transparent 55%
+    ),
+    var(--surface);
+}
+
+.final-cta-card h2 {
+  color: var(--text);
+
+  font-size: clamp(26px, 5vw, 42px);
+  line-height: 1.45;
+
+  font-weight: 900;
+
+  margin-bottom: 8px;
+}
+
+.final-cta-card h2 strong {
+  color: var(--gold-light);
+  display: block;
+}
+
+.final-cta-card p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.final-cta-card .btn {
+  min-width: 240px;
+}
+
+
+/* =========================================================
+   فوتر
+========================================================= */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: #070709;
+
+  padding: 16px 0;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  text-align: center;
+}
+
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+}
+
+.footer-row-main {
+  gap: 6px;
+}
+
+.footer-brand {
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+
+.footer-desc {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.footer-row-links {
+  gap: 8px;
+}
+
+.footer-row-links a {
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.footer-row-links a:hover {
+  color: var(--gold);
+}
+
+.footer-sep {
+  color: var(--border);
+  font-size: 12px;
+}
+
+.footer-row-payment {
+  gap: 6px;
+}
+
+.footer-row-payment > span {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.footer-rules {
+  color: var(--text-muted);
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.payment-badge {
+  padding: 3px 7px;
+
+  border: 1px solid var(--border);
+  border-radius: 6px;
+
+  color: var(--text-soft);
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   صفحه لایسنس و قوانین
+========================================================= */
+
+.license-page {
+  position: fixed;
+  inset: 0;
+  z-index: 1500;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px;
+
+  background: rgba(5, 5, 7, 0.92);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.license-page[hidden] {
+  display: none;
+}
+
+.license-close {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: var(--text);
+
+  font-size: 24px;
+  line-height: 1;
+}
+
+.license-content {
+  width: min(100%, 520px);
+  max-height: calc(100vh - 36px);
+
+  overflow-y: auto;
+
+  padding: 24px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  background: var(--surface);
+
+  color: var(--text-soft);
+
+  font-size: 14px;
+  line-height: 2;
+
+  text-align: right;
+}
+
+.license-content h2 {
+  color: var(--gold);
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+.license-content p {
+  margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   پنجره‌ها
+========================================================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.78);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.modal-box {
+  position: relative;
+  z-index: 2;
+
+  width: min(100%, 520px);
+  max-height: calc(100vh - 36px);
+
+  overflow-y: auto;
+
+  border: 1px solid var(--border-gold);
+  border-radius: 24px;
+
+  background: var(--surface);
+
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.6);
+
+  animation: modalIn 0.2s ease;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: var(--text);
+
+  font-size: 24px;
+  line-height: 1;
+}
+
+.modal-content {
+  padding: 32px 24px 26px;
+}
+
+.modal-content > .eyebrow {
+  margin-bottom: 4px;
+}
+
+.modal-content h2 {
+  color: var(--text);
+
+  font-size: 25px;
+  font-weight: 900;
+
+  margin-bottom: 16px;
+}
+
+.purchase-summary {
+  min-height: 65px;
+
+  padding: 14px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.purchase-note {
+  margin: 14px 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  padding: 12px;
+
+  border-radius: 13px;
+
+  background: rgba(216, 181, 106, 0.05);
+}
+
+.purchase-note strong {
+  color: var(--gold-light);
+  font-size: 18px;
+}
+
+.purchase-note span {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.modal-buy-button {
+  width: 100%;
+}
+
+.result-modal-box {
+  max-width: 560px;
+}
+
+.result-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 12px;
+
+  border-radius: 50%;
+
+  background: rgba(99, 201, 139, 0.12);
+  color: var(--success);
+
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.payment-result-content {
+  color: var(--text-soft);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.post-purchase-form {
+  margin-top: 18px;
+}
+
+.post-purchase-form button {
+  width: 100%;
+  margin-top: 14px;
+}
+
+.post-purchase-result {
+  margin-top: 16px;
+
+  padding: 14px;
+
+  border-radius: 14px;
+
+  background: rgba(99, 201, 139, 0.05);
+  border: 1px solid rgba(99, 201, 139, 0.2);
+}
+
+.download-button {
+  width: 100%;
+  margin-top: 12px;
+}
+
+
+/* =========================================================
+   پیام کوچک
+========================================================= */
+
+.toast {
+  position: fixed;
+
+  right: 16px;
+  left: 16px;
+  bottom: 18px;
+
+  z-index: 2000;
+
+  width: min(420px, calc(100% - 32px));
+  margin-inline: auto;
+
+  padding: 13px 16px;
+
+  border: 1px solid var(--border);
+  border-radius: 13px;
+
+  background: #18181d;
+
+  color: var(--text);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-align: center;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(15px);
+
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.toast.success {
+  border-color: rgba(99, 201, 139, 0.3);
+}
+
+.toast.error {
+  border-color: rgba(232, 117, 117, 0.3);
+}
+
+
+/* =========================================================
+   حالت غیرفعال
+========================================================= */
+
+button:disabled,
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none !important;
+}
+
+
+/* =========================================================
+   تبلت
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .other-prizes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-inner {
+    gap: 4px;
+  }
+}
+
+
+/* =========================================================
+   موبایل
+========================================================= */
+
+@media (max-width: 680px) {
+
+  body {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 44px 0;
+  }
+
+  .container {
+    width: min(calc(100% - 24px), 560px);
+  }
+
+  .header-inner {
+    min-height: 60px;
+    gap: 10px;
+  }
+
+  .brand-main {
+    font-size: 12px;
+  }
+
+  .brand-sub {
+    font-size: 8px;
+  }
+
+  .instagram-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .instagram-id {
+    font-size: 11px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 24px;
+    padding-bottom: 36px;
+  }
+
+  .hero-content {
+    margin-top: 24px;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+  }
+
+  .hero-text {
+    font-size: 16px;
+    line-height: 2;
+  }
+
+  .season-countdown {
+    padding: 12px;
+  }
+
+  .countdown-item {
+    min-width: 48px;
+    padding: 5px 8px;
+  }
+
+  .countdown-item strong {
+    font-size: 20px;
+  }
+
+  .countdown-item strong.countdown-days {
+    font-size: 23px;
+  }
+
+  .hero-price {
+    font-size: 14px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .live-status-section {
+    padding-top: 5px;
+    padding-bottom: 32px;
+  }
+
+  .live-status-card {
+    padding: 12px 10px;
+  }
+
+  .status-row {
+    min-height: 42px;
+    gap: 10px;
+    padding: 6px 10px;
+  }
+
+  .status-row .status-text {
+    font-size: 14.3px;
+  }
+
+  .status-row .status-text-live {
+    font-size: 14.3px;
+  }
+
+  .status-golden-opportunity {
+    padding: 8px 10px;
+  }
+
+  .status-golden-opportunity .status-text-cta {
+    font-size: 12px;
+  }
+
+  .section-heading {
+    margin-bottom: 20px;
+  }
+
+  .section-heading h2 {
+    font-size: 28px;
+  }
+
+  .section-heading p {
+    font-size: 15px;
+  }
+
+  .main-prize-card {
+    border-radius: 20px;
+  }
+
+  .main-prize-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .main-prize-content {
+    padding: 14px;
+  }
+
+  .main-prize-content h3 {
+    font-size: 24px;
+  }
+
+  .other-prizes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .prize-card {
+    border-radius: 12px;
+  }
+
+  .prize-card-content {
+    padding: 7px 5px;
+  }
+
+  .prize-card-content h3 {
+    font-size: 12.13px;
+  }
+
+  .prizes-cta .btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .products-grid-single {
+    gap: 9px;
+  }
+
+  .product-card-single {
+    border-radius: 14px;
+  }
+
+  .product-cover {
+    aspect-ratio: 1 / 0.41;
+  }
+
+  .product-info-single {
+    padding: 7px;
+  }
+
+  .product-buy-single {
+    min-height: 46px;
+    font-size: 12px;
+  }
+
+  .ticket-cta-btn {
+    font-size: 15px;
+  }
+
+  .testimonial-box {
+    padding: 12px 14px;
+  }
+
+  .testimonial-content {
+    min-height: 58px;
+  }
+
+  .testimonial-name {
+    font-size: 12px;
+  }
+
+  .testimonial-text {
+    font-size: 12px;
+  }
+
+  .chance-card {
+    padding: 22px 16px;
+  }
+
+  .chance-form input,
+  .post-purchase-form input {
+    min-height: 56px;
+    font-size: 18px;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-item {
+    min-height: 68px;
+    border-left: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .trust-item:last-child {
+    border-bottom: 0;
+  }
+
+  .final-cta-card {
+    padding: 32px 16px;
+  }
+
+  .final-cta-card .btn {
+    width: 100%;
+  }
+
+  .footer-inner {
+    gap: 4px;
+  }
+
+  .modal {
+    padding: 10px;
+  }
+
+  .modal-box {
+    max-height: calc(100vh - 20px);
+    border-radius: 20px;
+  }
+
+  .modal-content {
+    padding: 30px 16px 20px;
+  }
+}
+
+
+/* =========================================================
+   موبایل خیلی کوچک
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .container {
+    width: min(calc(100% - 18px), 560px);
+  }
+
+  .brand-main {
+    font-size: 11px;
+  }
+
+  .instagram-id {
+    font-size: 10px;
+  }
+
+  .hero h1 {
+    font-size: 31px;
+  }
+
+  .products-grid-single {
+    gap: 7px;
+  }
+
+  .product-buy-single {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   دسترسی‌پذیری
+========================================================= */
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  }
